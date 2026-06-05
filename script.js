@@ -1,5 +1,5 @@
 /* --- 1. TYPEWRITER EFFECT --- */
-const words = ["Frontend Developer", "Problem Solver", "Tech Enthusiast"];
+const words = ["M365 Solutions Engineer", "Angular & Frontend Engineer", "Application Support Specialist"];
 let i = 0, timer;
 
 function typingEffect() {
