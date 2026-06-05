@@ -322,3 +322,61 @@ section {
     .navbar { display: none; } 
     .home h1 { font-size: 2.5rem; }
 }
+
+/* --- PREMIUM TOAST NOTIFICATION STYLES --- */
+.toast-notification {
+    position: fixed;
+    top: 30px;
+    right: -400px; 
+    background: rgba(17, 22, 34, 0.85);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(0, 230, 255, 0.2);
+    border-radius: 12px;
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    z-index: 2000;
+    width: 350px;
+    transition: right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toast-notification.show {
+    right: 30px;
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.toast-icon {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    filter: drop-shadow(0 0 5px var(--accent-color));
+}
+
+.toast-message h3 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.toast-message p {
+    font-size: 0.9rem;
+    color: #b2becd;
+}
+
+.toast-close {
+    font-size: 1.5rem;
+    color: #888;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.toast-close:hover {
+    color: #fff;
+}

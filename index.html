@@ -90,23 +90,31 @@
     </section>
 
     <section id="contact" class="contact">
-    <h2 class="heading">Contact <span>Me</span></h2>
-    
-    <form action="https://formspree.io/f/mbdelvkz" method="POST" id="contact-form">
-        
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="_replyto" placeholder="Your Email" required>
-        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-        
-        <button type="submit" class="btn" style="align-self: center;">Send Message</button>
-    </form>
-</section>
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST" id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="_replyto" placeholder="Your Email" required>
+            <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn" style="align-self: center;">Send Message</button>
+        </form>
+    </section>
 
     <div class="modal" id="resume-modal">
         <span class="close-modal" id="close-resume">&times;</span>
         <div class="modal-content">
             <iframe src="resume.pdf"></iframe>
         </div>
+    </div>
+
+    <div class="toast-notification" id="toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle toast-icon"></i>
+            <div class="toast-message">
+                <h3>Success!</h3>
+                <p>Message sent successfully. I'll get back to you soon!</p>
+            </div>
+        </div>
+        <span class="toast-close" id="close-toast">&times;</span>
     </div>
 
     <script src="script.js"></script>

@@ -142,37 +142,49 @@ window.addEventListener('scroll', () => {
     }
 });
 
-/* --- 5. FORMSPREE CONTACT FORM HANDLING --- */
-const form = document.getElementById('contact-form');
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault(); // Stop the page from redirecting
+/* --- 5. FORMSPREE CONTACT FORM HANDLING --- */
+const contactForm = document.getElementById('contact-form');
+const toastNotification = document.getElementById('toast');
+const closeToastBtn = document.getElementById('close-toast');
+
+function showSuccessToast() {
+    toastNotification.classList.add('show');
+    setTimeout(() => {
+        toastNotification.classList.remove('show');
+    }, 4000);
+}
+
+closeToastBtn.addEventListener('click', () => {
+    toastNotification.classList.remove('show');
+});
+
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault(); 
     
-    const data = new FormData(form);
-    const btn = form.querySelector('.btn');
+    const data = new FormData(contactForm);
+    const btn = contactForm.querySelector('.btn');
     const originalText = btn.innerHTML;
     
-    // Change button state to let user know it's working
     btn.innerHTML = "Sending...";
     btn.disabled = true;
 
-    fetch(form.action, {
-        method: form.method,
+    fetch(contactForm.action, {
+        method: contactForm.method,
         body: data,
         headers: {
             'Accept': 'application/json'
         }
     }).then(response => {
         if (response.ok) {
-            alert("Message sent successfully! I will get back to you soon.");
-            form.reset(); // Clear the inputs
+            showSuccessToast();
+            contactForm.reset(); 
         } else {
-            alert("Oops! There was a problem submitting your form. Please try again.");
+            alert("Oops! There was a problem submitting your form.");
         }
     }).catch(error => {
         alert("Form submission failed. Please check your internet connection.");
     }).then(() => {
-        // Reset the button back to normal
         btn.innerHTML = originalText;
         btn.disabled = false;
     });
