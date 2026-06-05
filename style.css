@@ -1,71 +1,112 @@
-body {
-    font-family: Arial;
-    margin: 0;
-    background: linear-gradient(to right, #eef2f3, #ffffff);
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* Hero */
-.hero {
-    text-align: center;
-    background: linear-gradient(135deg, #0078D7, #00C6FF);
-    color: white;
-    padding: 60px 20px;
+body{
+    font-family:Segoe UI, sans-serif;
+    background:#0f172a;
+    color:white;
+    overflow-x:hidden;
 }
 
-.btn {
-    background: white;
-    color: #0078D7;
-    padding: 10px 15px;
-    margin: 5px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
 }
 
-.btn:hover {
-    background: #003f7f;
-    color: white;
+.hero-content{
+    z-index:2;
 }
 
-/* Cards */
-.card {
-    background: white;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    transition: 0.3s;
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.hero h1 span{
+    color:#38bdf8;
 }
 
-/* Skills */
-.skills span {
-    display: inline-block;
-    background: #0078D7;
-    color: white;
-    padding: 5px 10px;
-    margin: 5px;
-    border-radius: 5px;
+.hero h2{
+    font-size:2rem;
+    height:60px;
+    margin-bottom:20px;
 }
 
-/* Form */
-input, textarea {
-    width: 90%;
-    padding: 10px;
-    margin: 10px;
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#cbd5e1;
+    line-height:1.8;
 }
 
-button {
-    background: #0078D7;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 30px;
+    background:#38bdf8;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    transition:0.3s;
 }
 
-footer {
-    text-align: center;
-    padding: 15px;
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.cursor{
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+}
+
+.floating-circle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(56,189,248,0.15);
+    animation:float 8s infinite ease-in-out;
+}
+
+.circle1{
+    width:250px;
+    height:250px;
+    top:10%;
+    left:10%;
+}
+
+.circle2{
+    width:150px;
+    height:150px;
+    bottom:15%;
+    right:15%;
+}
+
+.circle3{
+    width:100px;
+    height:100px;
+    top:60%;
+    left:20%;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-25px);
+    }
+    100%{
+        transform:translateY(0);
+    }
 }
