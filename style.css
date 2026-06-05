@@ -1,78 +1,71 @@
 body {
     font-family: Arial;
     margin: 0;
-    background: #f4f6f8;
+    background: linear-gradient(to right, #eef2f3, #ffffff);
 }
 
-/* Header */
-header {
+/* Hero */
+.hero {
     text-align: center;
-    background: #0078D7;
+    background: linear-gradient(135deg, #0078D7, #00C6FF);
     color: white;
-    padding: 40px;
-    animation: fadeIn 2s;
-}
-
-.buttons {
-    margin-top: 15px;
+    padding: 60px 20px;
 }
 
 .btn {
-    text-decoration: none;
     background: white;
     color: #0078D7;
     padding: 10px 15px;
     margin: 5px;
+    text-decoration: none;
     border-radius: 5px;
+    display: inline-block;
 }
 
 .btn:hover {
-    background: #005fa3;
+    background: #003f7f;
     color: white;
 }
 
-/* Sections */
+/* Cards */
 .card {
     background: white;
     margin: 20px;
     padding: 20px;
-    border-radius: 8px;
-    animation: slideUp 1s;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
-h2 {
-    color: #0078D7;
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Skills */
+.skills span {
+    display: inline-block;
+    background: #0078D7;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
 }
 
 /* Form */
 input, textarea {
-    display: block;
     width: 90%;
-    margin: 10px auto;
     padding: 10px;
+    margin: 10px;
 }
 
 button {
     background: #0078D7;
     color: white;
+    padding: 10px;
     border: none;
-    padding: 10px 20px;
     cursor: pointer;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes slideUp {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+footer {
+    text-align: center;
+    padding: 15px;
 }

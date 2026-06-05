@@ -3,64 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dhinesh Kumar Portfolio</title>
+<title>Dhinesh Kumar | Portfolio</title>
 
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<header>
+<!-- HERO SECTION -->
+<header class="hero">
     <h1>Dhinesh Kumar</h1>
-    <p>Associate Team Lead | Chennai</p>
+    <p>Associate Team Lead | Operations & Process Excellence</p>
 
     <div class="buttons">
         <a href="resume.pdf" download class="btn">Download Resume</a>
-        <a href="https://linkedin.com" target="_blank" class="btn">LinkedIn</a>
+        <a href="https://www.linkedin.com" target="_blank" class="btn">LinkedIn</a>
     </div>
 </header>
 
+<!-- ABOUT -->
 <section class="card">
     <h2>About Me</h2>
-    <p>I am an Associate Team Lead experienced in operations, team management, and process tracking.</p>
+    <p>
+        Associate Team Lead with strong experience in operations management,
+        team handling, and process optimization. Skilled in monitoring daily
+        workflows, ensuring SLA adherence, and improving overall team productivity.
+    </p>
 </section>
 
+<!-- EXPERIENCE -->
+<section class="card">
+    <h2>Experience</h2>
+
+    <p><strong>Associate Team Lead</strong></p>
+
+    <ul>
+        <li>Managed daily team activities including login/logout tracking and task allocation</li>
+        <li>Monitored volume and ensured timely completion of deliverables</li>
+        <li>Collaborated with managers and stakeholders for reporting and process updates</li>
+        <li>Maintained transparency and accuracy in operations reporting</li>
+    </ul>
+</section>
+
+<!-- SKILLS -->
 <section class="card">
     <h2>Skills</h2>
-    <ul>
-        <li>Team Management</li>
-        <li>Process Monitoring</li>
-        <li>Reporting & Analysis</li>
-        <li>Excel & Tools</li>
-    </ul>
+
+    <div class="skills">
+        <span>Team Management</span>
+        <span>Operations Handling</span>
+        <span>Reporting & Analysis</span>
+        <span>Excel</span>
+        <span>Process Monitoring</span>
+    </div>
 </section>
 
+<!-- PROJECTS -->
 <section class="card">
     <h2>Projects</h2>
+
     <ul>
-        <li>Login/Logout Tracking Dashboard</li>
-        <li>Volume Monitoring Tool</li>
+        <li>Login & Logout Tracking Dashboard (Internal Tool)</li>
+        <li>Volume Monitoring & Reporting Dashboard</li>
     </ul>
 </section>
 
-<form action="https://formspree.io/f/mbdelvkz" method="POST">
-    
-    <input type="text" name="name" placeholder="Your Name" required>
-    
-    <input type="email" name="email" placeholder="Your Email" required>
-    
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    
-    <button type="submit">Send</button>
+<!-- CONTACT -->
+<section class="card">
+    <h2>Contact Me</h2>
 
-</form>
-``
+    <form action="https://formspree.io/f/mbdelvkz" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
 
 <footer>
     <p>© 2026 Dhinesh Kumar</p>
 </footer>
-
-<script src="script.js"></script>
 
 </body>
 </html>
