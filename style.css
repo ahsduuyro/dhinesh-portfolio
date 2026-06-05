@@ -1,101 +1,324 @@
-body{
-background:#0a0a0a;
-color:white;
-font-family:'Segoe UI',sans-serif;
-overflow-x:hidden;
+/* --- RESET & VARIABLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
 }
 
-#particles-js{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-1;
+:root {
+    --bg-color: #0a0e17;
+    --text-color: #ffffff;
+    --accent-color: #00e6ff;
+    --secondary-color: #7000ff;
+    --card-bg: rgba(255, 255, 255, 0.05);
 }
 
-.custom-nav{
-background:rgba(0,0,0,.7);
-backdrop-filter:blur(12px);
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
 }
 
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
+/* --- BACKGROUND ANIMATION CONTAINER --- */
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
 }
 
-.hero h1{
-font-size:70px;
-font-weight:700;
+/* --- HEADER NAVBAR --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(10, 14, 23, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.hero h2{
-color:#00d9ff;
-height:50px;
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-decoration: none;
 }
 
-.hero-text{
-max-width:600px;
-font-size:18px;
+.navbar a {
+    font-size: 1.1rem;
+    color: #ffffff; /* This forces the text to be clear, bright white */
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+    transition: 0.3s;
 }
 
-.profile-circle{
-width:280px;
-height:280px;
-margin:auto;
-border-radius:50%;
-background:linear-gradient(135deg,#00d9ff,#7a5cff);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:120px;
+/* This keeps your neon cyan active glow when a section is selected or hovered */
+.navbar a:hover, .navbar a.active {
+    color: var(--accent-color); 
 }
 
-.section{
-padding:100px 0;
+/* --- SECTIONS COMMON STYLES --- */
+section {
+    min-height: 100vh;
+    padding: 8rem 10% 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.section-title{
-text-align:center;
-margin-bottom:50px;
-font-size:40px;
+.heading {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
-.glass-card{
-background:rgba(255,255,255,.05);
-padding:30px;
-border-radius:20px;
-backdrop-filter:blur(10px);
+.heading span {
+    color: var(--accent-color);
 }
 
-.timeline{
-border-left:3px solid #00d9ff;
-padding-left:30px;
+/* --- HOME SECTION --- */
+.home {
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.timeline-item{
-margin-bottom:40px;
+.home h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
-.skill-card{
-padding:25px;
-text-align:center;
-border-radius:15px;
-background:rgba(255,255,255,.05);
-transition:.3s;
+.home h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
 }
 
-.skill-card:hover{
-transform:translateY(-8px);
+.home h3 span {
+    color: var(--accent-color);
+    border-right: 2px solid var(--accent-color);
+    animation: blink 0.75s step-end infinite;
 }
 
-.social-links a{
-color:white;
-font-size:35px;
-margin-right:20px;
+.home p {
+    font-size: 1.1rem;
+    margin: 1.5rem 0 2.5rem;
+    max-width: 600px;
+    color: #b2becd;
 }
 
-footer{
-text-align:center;
-padding:30px;
-border-top:1px solid rgba(255,255,255,.1);
+/* --- BUTTONS & SOCIAL ICONS --- */
+.btn-box {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+    border-radius: 40px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 230, 255, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(0, 230, 255, 0.6);
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* --- EXPERIENCE & SKILLS GRIDS --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.card .date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+/* Skills Bars */
+.skill-bar {
+    margin-bottom: 1.5rem;
+}
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+.bar-container {
+    width: 100%;
+    height: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+    width: 0; 
+    transition: width 1.5s cubic-bezier(0.1, 0.8, 0.2, 1);
+}
+
+/* --- CONTACT FORM --- */
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 1rem;
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+}
+
+.contact input:focus, .contact textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* --- RESUME POPUP MODAL --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: #111622;
+    width: 80%;
+    max-width: 800px;
+    height: 80vh;
+    border-radius: 15px;
+    border: 1px solid var(--accent-color);
+    position: relative;
+    transform: scale(0.7);
+    transition: transform 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1010;
+}
+
+.close-modal:hover {
+    color: var(--accent-color);
+}
+
+.modal-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+}
+
+/* --- ANIMATIONS & MEDIA QUERIES --- */
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-color); }
+}
+
+@media (max-width: 768px) {
+    header { padding: 1.5rem 5%; }
+    section { padding: 6rem 5% 2rem; }
+    .navbar { display: none; } 
+    .home h1 { font-size: 2.5rem; }
 }

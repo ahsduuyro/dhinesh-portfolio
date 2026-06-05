@@ -1,319 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Dhinesh Kumar | Portfolio</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dynamic Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div id="particles-js"></div>
+    <div id="canvas-container">
+        <canvas id="bg-canvas"></canvas>
+    </div>
 
-<!-- NAVBAR -->
+    <header>
+        <a href="#home" class="logo">Portfolio.</a>
+        <nav class="navbar">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+    </header>
 
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-nav">
-<div class="container">
+    <section id="home" class="home">
+        <h3>Hello, It's me</h3>
+        <h1>Your Name</h1>
+        <h3>And I'm a <span id="typewriter"></span></h3>
+        <p>Welcome to my interactive portfolio. I focus on clean interfaces, smooth user experiences, and robust modern web development.</p>
+        
+        <div class="btn-box">
+            <button class="btn" id="open-resume">View Resume</button>
+            <div class="social-icons">
+                <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/YOUR_USERNAME" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
 
-<a class="navbar-brand fw-bold" href="#">
-DK
-</a>
+    <section id="about">
+        <h2 class="heading">About <span>Me</span></h2>
+        <div class="card" style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                I am a passionate developer dedicated to creating impactful digital experiences. With a foundation built on curiosity and continuous learning, I turn complex problems into functional, elegant web applications.
+            </p>
+        </div>
+    </section>
 
-<button class="navbar-toggler"
-type="button"
-data-bs-toggle="collapse"
-data-bs-target="#navMenu">
+    <section id="experience">
+        <h2 class="heading">My <span>Experience</span></h2>
+        <div class="grid-container">
+            <div class="card">
+                <div class="date">2024 - Present</div>
+                <h3>Senior Software Engineer</h3>
+                <p>Tech Corp Inc.</p>
+                <p style="margin-top:0.5rem; color:#aaa;">Leading frontend architecture transitions, optimizing web performance metrics, and mentoring junior peers.</p>
+            </div>
+            <div class="card">
+                <div class="date">2022 - 2024</div>
+                <h3>Full Stack Developer</h3>
+                <p>Web Solutions Agency</p>
+                <p style="margin-top:0.5rem; color:#aaa;">Developed and deployed end-to-end applications using modern JavaScript environments, APIs, and agile pipelines.</p>
+            </div>
+        </div>
+    </section>
 
-<span class="navbar-toggler-icon"></span>
+    <section id="skills">
+        <h2 class="heading">My <span>Skills</span></h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Technical Proficiency</h3>
+                <div style="margin-top: 1.5rem;">
+                    <div class="skill-bar">
+                        <div class="skill-info"><span>HTML / CSS / JS</span><span>90%</span></div>
+                        <div class="bar-container"><div class="bar" data-progress="90%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info"><span>React / Vue</span><span>85%</span></div>
+                        <div class="bar-container"><div class="bar" data-progress="85%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info"><span>Node.js / Python</span><span>75%</span></div>
+                        <div class="bar-container"><div class="bar" data-progress="75%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</button>
-
-<div class="collapse navbar-collapse" id="navMenu">
-
-<ul class="navbar-nav ms-auto">
-
-<li class="nav-item">
-<a class="nav-link" href="#home">Home</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#about">About</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#experience">Experience</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#skills">Skills</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#contact">Contact</a>
-</li>
-
-</ul>
-
-</div>
-</div>
-</nav>
-
-<!-- HERO -->
-
-<section id="home" class="hero">
-
-<div class="container">
-
-<div class="row align-items-center">
-
-<div class="col-lg-7">
-
-<p class="tagline">
-WELCOME TO MY PORTFOLIO
-</p>
-
-<h1>
-Dhinesh Kumar
-</h1>
-
-<h2>
-<span id="typing"></span>
-</h2>
-
-<p class="hero-text">
-
-Associate Team Lead with experience in
-Application Support, Front-End Development,
-Leadership and Microsoft 365 Administration.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#about" class="btn btn-primary btn-lg">
-Explore
-</a>
-
-<a href="YOUR_RESUME_LINK"
-target="_blank"
-class="btn btn-outline-light btn-lg">
-Resume
-</a>
-
-</div>
-
-</div>
-
-<div class="col-lg-5 text-center">
-
-<div class="profile-circle">
-
-<i class="fas fa-user"></i>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+    <section id="contact" class="contact">
+    <h2 class="heading">Contact <span>Me</span></h2>
+    
+    <form action="https://formspree.io/f/mbdelvkz" method="POST" id="contact-form">
+        
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        
+        <button type="submit" class="btn" style="align-self: center;">Send Message</button>
+    </form>
 </section>
 
-<!-- ABOUT -->
-
-<section id="about" class="section">
-
-<div class="container">
-
-<h2 class="section-title">
-About Me
-</h2>
-
-<div class="glass-card">
-
-<p>
-
-Technology professional with 5+ years of
-experience in application support,
-client communication, troubleshooting,
-team leadership and web technologies.
-
-Currently focusing on Microsoft 365,
-Exchange Online, Entra ID and
-Cloud Administration.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- EXPERIENCE -->
-
-<section id="experience" class="section">
-
-<div class="container">
-
-<h2 class="section-title">
-Experience
-</h2>
-
-<div class="timeline">
-
-<div class="timeline-item">
-
-<h4>Associate Team Lead</h4>
-
-<p>2025 - Present</p>
-
-</div>
-
-<div class="timeline-item">
-
-<h4>Software Engineer</h4>
-
-<p>2022 - 2025</p>
-
-</div>
-
-<div class="timeline-item">
-
-<h4>Junior Front-End Developer</h4>
-
-<p>2021 - 2022</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- SKILLS -->
-
-<section id="skills" class="section">
-
-<div class="container">
-
-<h2 class="section-title">
-Skills
-</h2>
-
-<div class="row g-4">
-
-<div class="col-md-3">
-<div class="skill-card">HTML</div>
-</div>
-
-<div class="col-md-3">
-<div class="skill-card">CSS</div>
-</div>
-
-<div class="col-md-3">
-<div class="skill-card">JavaScript</div>
-</div>
-
-<div class="col-md-3">
-<div class="skill-card">Angular</div>
-</div>
-
-<div class="col-md-3">
-<div class="skill-card">Git</div>
-</div>
-
-<div class="col-md-3">
-<div class="skill-card">Application Support</div>
-</div>
-
-<div class="col-md-3">
-<div class="skill-card">Microsoft 365</div>
-</div>
-
-<div class="col-md-3">
-<div class="skill-card">Leadership</div>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact" class="section">
-
-<div class="container">
-
-<h2 class="section-title">
-Contact
-</h2>
-
-<div class="glass-card">
-
-<form>
-
-<input
-type="text"
-placeholder="Your Name"
-class="form-control mb-3">
-
-<input
-type="email"
-placeholder="Your Email"
-class="form-control mb-3">
-
-<textarea
-rows="5"
-placeholder="Message"
-class="form-control mb-3">
-</textarea>
-
-<button class="btn btn-primary">
-Send Message
-</button>
-
-</form>
-
-<div class="social-links mt-4">
-
-<a href="https://www.linkedin.com/in/dhinesh-kumar-p-190a89171" target="_blank">
-<i class="fab fa-linkedin"></i>
-</a>
-
-<a href="https://github.com/ahsduuyro/dhinesh-portfolio/blob/main/resume.pdf" target="_blank">
-<i class="fab fa-github"></i>
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-© 2026 Dhinesh Kumar
-
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-<script src="script.js"></script>
-
+    <div class="modal" id="resume-modal">
+        <span class="close-modal" id="close-resume">&times;</span>
+        <div class="modal-content">
+            <iframe src="resume.pdf"></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
